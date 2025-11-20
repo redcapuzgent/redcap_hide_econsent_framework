@@ -1,0 +1,39 @@
+{
+    "name": "Hide e-Consent Framework",
+    "namespace": "uzgent\\HideEconsentFramework",
+    "description": "This module will hide the e-Consent Framework.<br>If enabled on a single project, the module will only hide the e-Consent Framework for that project.<br>If enabled on all projects, the module will hide the e-Consent Framework for all projects, except for projects that are added to the allowlist.",
+    "documentation": "README.md",
+    "authors": [
+        {
+            "name": "Simon Vanderschaeghe",
+            "email": "simon.vanderschaeghe@uzgent.be",
+            "institution": "University Hospital Ghent"
+        }
+    ],
+    "framework-version": 16,
+    "enable-every-page-hooks-on-system-pages": false,
+    "system-settings": [
+        {
+            "key": "allowlist",
+            "name": "Allowlist",
+            "required": false,
+            "type": "sub_settings",
+            "repeatable": true,
+            "sub_settings": [
+                {
+                    "key": "project-id",
+                    "name": "Project",
+                    "required": false,
+                    "type": "project-id",
+                    "repeatable": false
+                }
+            ]
+        }
+    ],
+    "compatibility": {
+        "php-version-min": "8.3.0",
+        "php-version-max": "",
+        "redcap-version-min": "15.5.0",
+        "redcap-version-max": ""
+    }
+}
