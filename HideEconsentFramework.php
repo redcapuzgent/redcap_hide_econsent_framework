@@ -10,7 +10,7 @@ class HideEconsentFramework extends \ExternalModules\AbstractExternalModule
     function redcap_every_page_top(int $project_id)
     {
         $allowlist = $this->getSubSettings('allowlist');
-        $allowed_projects = null;
+        $allowed_projects = [];
 
         foreach ($allowlist as $allowed) {
             $allowed_projects[] = intval($allowed['project-id']);
