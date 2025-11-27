@@ -18,14 +18,14 @@
             "name": "Allowlist",
             "required": false,
             "type": "sub_settings",
-            "repeatable": true,
+            "repeatable": false,
             "sub_settings": [
                 {
                     "key": "project-id",
-                    "name": "Project",
+                    "name": "Project ID",
                     "required": false,
-                    "type": "project-id",
-                    "repeatable": false
+                    "type": "text",
+                    "repeatable": true
                 }
             ]
         }

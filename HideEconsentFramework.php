@@ -7,16 +7,15 @@ namespace uzgent\HideEconsentFramework;
 class HideEconsentFramework extends \ExternalModules\AbstractExternalModule
 {
 
-    function redcap_every_page_top(int $project_id)
+    function redcap_every_page_top($project_id)
     {
-        $allowlist = $this->getSubSettings('allowlist');
+        $allowlist = $this->getSystemSetting('project-id');
         $allowed_projects = [];
+        $allowed_projects = array_map('trim', $allowlist[0]);
 
-        foreach ($allowlist as $allowed) {
-            $allowed_projects[] = intval($allowed['project-id']);
-        }
-
-        if (!in_array($project_id, $allowed_projects, true)) {
+        if (in_array($project_id, $allowed_projects, true)) {
+            return;
+        } else {
             if (str_contains(PAGE, 'online_designer')) {
                 $urlScript = $this->getUrl('js/online_designer.js');
             } else if (str_contains(PAGE, 'PdfSnapshotController')) {
