@@ -12,7 +12,7 @@ On the 'External Modules - Project Module Manager' page of the selected project:
 ### 2. Hide the e-Consent Framework for all projects that are not in the allowlist
 On the 'External Modules - Module Manager' page in the Control Center:
 1. Check the 'Enable module on all projects by default' checkbox.
-2. Add projects where the e-Consent Framework should not be hidden to the allowlist.
+2. Add project ID's to the allowlist for projects where the e-Consent Framework should not be hidden. Project ID's are not validated, only leading & trailing spaces are removed.
 
 ## Frequently Asked Questions
 None (yet)
